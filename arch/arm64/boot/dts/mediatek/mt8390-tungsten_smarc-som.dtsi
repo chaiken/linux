@@ -837,6 +837,8 @@
 	vusb33-supply = <&mt6359_vusb_ldo_reg>;
 	vdd1p2-supply = <&mt6315_6_vbuck4>;
 
+	#address-cells = <1>;
+	#size-cells = <0>;
 	ethernet: ethernet@1 {
 		compatible = "usb424,7850";
 		reg = <1>;
