@@ -20,6 +20,10 @@
 	status = "okay";
 };
 
+&dsi1 {
+	status = "okay";
+};
+
 &fb_mipi {
 	mipi-cmds = <&mipi_cmds_m101nwwb>;
 	status = "okay";
@@ -32,4 +36,7 @@
 &ts_mipi_goodix {
 	status = "okay";
 };
-#endif
+
+&ts_mipi_goodix2 {
+	status = "okay";
+};
