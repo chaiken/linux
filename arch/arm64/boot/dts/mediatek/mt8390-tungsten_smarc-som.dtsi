@@ -376,6 +376,8 @@
 / {
 	aliases {
 		serial0 = &uart0;
+		dsi0 = &dsi0;
+		dsi1 = &dsi1;
 		ethernet0 = &eth;
 		rtc1 = &mt6359rtc;
 	};
@@ -561,6 +563,13 @@
 	poweron-in-hs-mode = <0>;
 };
 
+&dsi1 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	status = "okay";
+	poweron-in-hs-mode = <0>;
+};
+
 &dmic_codec {
 	wakeup-delay-ms = <200>;
 };
@@ -637,6 +646,10 @@
 	status = "okay";
 };
 #endif
+
+&mipi_tx1 {
+	status = "okay";
+};
 
 &mmc0 {
 	bus-width = <8>;
