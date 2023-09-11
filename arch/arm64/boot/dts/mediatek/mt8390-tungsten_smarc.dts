@@ -40,3 +40,4 @@
 &ts_mipi_goodix2 {
 	status = "okay";
 };
+#endif

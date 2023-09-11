@@ -1072,24 +1072,31 @@
 #ifdef SM_MIPI_PIXEL_CLOCK
 #define MIPI_PIXEL_CLOCK	SM_MIPI_PIXEL_CLOCK
 #endif
-#define MIPI_I2C_BUS		i2c_lcd_c
-#define MIPI_PWM		SM_PWM_LCD0
+#define MIPI_I2C_BUS		i2c_lcd_d
+#define MIPI_PWM		SM_PWM_LCD1
 
-#define GP_MIPI_PWM(a)		GP_SM_LCD0_BKLT_PWM(a)
-#define PD_MIPI_PWM(a)		PD_SM_LCD0_BKLT_PWM(a)	/* Pin 7, S141 */
-#define PD_MIPI_PWM_OUT(a)	PD_SM_LCD0_BKLT_PWM_OUT(a)
+#define GP_MIPI_PWM(a)		GP_SM_LCD1_BKLT_PWM(a)
+#define PD_MIPI_PWM(a)		PD_SM_LCD1_BKLT_PWM(a)	/* Pin 7, S141 */
+#define PD_MIPI_PWM_OUT(a)	PD_SM_LCD1_BKLT_PWM_OUT(a)
 
 #define GP_MIPI_IRQ(a)		GP_SM_CARRIER_STANDBY(a)
 #define PD_MIPI_IRQ(a)		PD_SM_CARRIER_STANDBY(a) /* Pin 8, S153 */
 
-#define GP_MIPI_TS_IRQ(a)	GP_SM_LCD0_BKLT_EN(a)
-#define PD_MIPI_TS_IRQ(a)	PD_SM_LCD0_BKLT_EN(a)	/* Pin 9, S127 */
+#define GP_MIPI_TS_IRQ(a)	GP_SM_LCD1_BKLT_EN(a)
+#define PD_MIPI_TS_IRQ(a)	PD_SM_LCD1_BKLT_EN(a)	/* Pin 9, S127 */
 
-#define GP_MIPI_TS_RESET(a)	GP_SM_GPIO7(a)		/* Pin 10, P115 */
-#define PD_MIPI_TS_RESET(a)	PD_SM_GPIO7(a)
+#define GP_MIPI_TS0_RESET(a)	GP_SM_GPIO7(a)		/* Pin 10, P115 */
+#define PD_MIPI_TS0_RESET(a)	PD_SM_GPIO7(a)
 
-#define GP_MIPI_ENABLE(a)	GP_SM_LCD0_VDD_EN(a)
-#define PD_MIPI_ENABLE(a)	PD_SM_LCD0_VDD_EN(a)	/* Pin 11, S133 */
+#define GP_MIPI_TS1_RESET(a)	GP_SM_GPIO19(a)
+#define PD_MIPI_TS1_RESET(a)	PD_SM_GPIO19(a)
+
+#define GP_MIPI_TS_RESET(a)	GP_MIPI_TS1_RESET(a)
+#define PD_MIPI_TS_RESET(a)	PD_MIPI_TS1_RESET(a)
+
+
+#define GP_MIPI_ENABLE(a)	GP_SM_LCD1_VDD_EN(a)
+#define PD_MIPI_ENABLE(a)	PD_SM_LCD1_VDD_EN(a)	/* Pin 11, S133 */
 
 #include "bd-universal-mipi-dsi.dtsi"
 #endif
