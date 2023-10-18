@@ -5,6 +5,8 @@
 
 #include "imx93-11x11-evk.dts"
 
+// #define EDMA
+
 / {
 	mic_leds {
 		compatible = "gpio-leds";
@@ -166,8 +168,10 @@
 	#address-cells = <1>;
 	#size-cells = <0>;
 	clock-frequency = <400000>;
+#ifdef EDMA
 	dmas = <&edma2 10 0 0>, <&edma2 11 0 1>;
 	dma-names = "tx","rx";
+#endif
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&pinctrl_lpi2c4>;
 	pinctrl-1 = <&pinctrl_lpi2c4>;

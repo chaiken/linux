@@ -5,6 +5,8 @@
 
 #include "imx93-11x11-evk.dts"
 
+// #define EDMA
+
 /delete-node/ &lpi2c1;
 /delete-node/ &ethosu_mem;
 
@@ -152,6 +154,7 @@
 	status = "disabled";
 };
 
+#ifdef EDMA
 &edma1{
 	status = "disabled";
 };
@@ -159,3 +162,4 @@
 &edma2{
 	status = "disabled";
 };
+#endif
