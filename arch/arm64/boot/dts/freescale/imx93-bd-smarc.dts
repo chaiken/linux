@@ -42,6 +42,7 @@
 		linux,cma {
 			compatible = "shared-dma-pool";
 			reusable;
+			alloc-ranges = <0 0x80000000 0 0x40000000>;
 			size = <0 0x10000000>;
 			linux,cma-default;
 		};
@@ -112,7 +113,7 @@
 	};
 #endif
 
-#if 0
+#if 1
 	led-controller {
 		compatible = "pwm-leds";
 		pinctrl-names = "default";
@@ -120,7 +121,7 @@
 
 		led-1 {
 			label = "tpm1_chan2";
-			pwms = <&tpm1 2 30000 0>; /* 42 = 24MHz; 30000 = 33KHz */
+			pwms = <&tpm1 2 42 0>; /* 42 = 24MHz; 30000 = 33KHz */
 			max-brightness = <10>;
 		};
 
@@ -1206,8 +1207,8 @@
 
 	pinctrl_uart6: uart6grp {
 		fsl,pins = <
-			MX93_PAD_GPIO_IO05__LPUART6_RX			0x31e
-			MX93_PAD_GPIO_IO04__LPUART6_TX			0x31e
+			MX93_PAD_GPIO_IO05__LPUART6_RX			0x3fe /* full drive strength was needed ?? */
+			MX93_PAD_GPIO_IO04__LPUART6_TX			0x3fe
 		>;
 	};
 
